@@ -1,0 +1,111 @@
+{
+  "name": "LintTech Digital Consulting Website",
+  "description": "A comprehensive guide to set up and configure the LintTech website",
+  "steps": [
+    {
+      "title": "Install Dependencies",
+      "description": "Install all required npm packages",
+      "command": "npm install",
+      "required": true
+    },
+    {
+      "title": "Set Up Clerk Authentication",
+      "description": "Configure Clerk for user authentication and billing",
+      "steps": [
+        "1. Visit https://clerk.com and sign up for an account",
+        "2. Create a new application in the Clerk Dashboard",
+        "3. Go to API Keys section",
+        "4. Copy your Publishable Key and Secret Key",
+        "5. Add them to your .env.local file as:",
+        "   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...",
+        "   CLERK_SECRET_KEY=sk_test_..."
+      ],
+      "required": true
+    },
+    {
+      "title": "Set Up Sanity CMS",
+      "description": "Configure Sanity CMS for content management",
+      "steps": [
+        "1. Install Sanity CLI: npm install -g @sanity/cli",
+        "2. Run: sanity login (if not logged in)",
+        "3. Create a new project: sanity init",
+        "4. Choose 'Create new project'",
+        "5. Select your organization",
+        "6. Name your project (e.g., 'linttech')",
+        "7. Choose 'production' dataset",
+        "8. Copy the Project ID from the output",
+        "9. Add to .env.local:",
+        "   NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id",
+        "   NEXT_PUBLIC_SANITY_DATASET=production",
+        "10. Deploy schemas: sanity deploy"
+      ],
+      "required": true
+    },
+    {
+      "title": "Start Development Server",
+      "description": "Run the Next.js development server",
+      "command": "npm run dev",
+      "url": "http://localhost:3000"
+    },
+    {
+      "title": "Configure Clerk Settings",
+      "description": "Additional Clerk configuration in dashboard",
+      "steps": [
+        "1. In Clerk Dashboard, go to 'Paths'",
+        "2. Set Sign-in path: /sign-in",
+        "3. Set Sign-up path: /sign-up",
+        "4. Set After sign-in: /dashboard",
+        "5. Set After sign-up: /dashboard"
+      ]
+    },
+    {
+      "title": "Deploy to Production",
+      "description": "Deploy your website to Vercel",
+      "steps": [
+        "1. Push your code to GitHub",
+        "2. Go to vercel.com and sign in",
+        "3. Click 'New Project'",
+        "4. Import your GitHub repository",
+        "5. Add environment variables from .env.local",
+        "6. Click 'Deploy'",
+        "7. Your site will be live at your-project.vercel.app"
+      ]
+    }
+  ],
+  "features": [
+    "Apple Liquid Glass Design Theme",
+    "Four Core Services (Data, Software Engineering, Cloud, Security)",
+    "Tech Community Hub",
+    "LMS Platform Integration",
+    "User Authentication (Clerk)",
+    "Billing System",
+    "CMS (Sanity)",
+    "Responsive Design",
+    "Protected Routes",
+    "User Dashboard"
+  ],
+  "technologies": {
+    "framework": "Next.js 15",
+    "language": "TypeScript",
+    "styling": "Tailwind CSS v4",
+    "ui": "shadcn/ui",
+    "auth": "Clerk",
+    "cms": "Sanity",
+    "icons": "Lucide React",
+    "fonts": "Geist Sans & Geist Mono"
+  },
+  "routes": {
+    "public": [
+      "/",
+      "/services/data",
+      "/services/software-engineering",
+      "/services/cloud-deployment",
+      "/services/security",
+      "/community"
+    ],
+    "protected": [
+      "/dashboard",
+      "/billing"
+    ]
+  }
+}
