@@ -171,10 +171,16 @@ export default function CommunityPage() {
                     </div>
                   </div>
 
-                  <Button size="lg" className="group">
-                    Launch LMS Platform
-                    <ExternalLink className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  <Link
+                    href="https://mouse-apps-lms.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="lg" className="group">
+                      Launch LMS Platform
+                      <ExternalLink className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </div>
 
                 <div className="space-y-6">

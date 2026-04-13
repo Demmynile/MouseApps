@@ -7,9 +7,9 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
   User,
-  CreditCard,
-  BookOpen,
-  Award,
+  CalendarClock,
+  CalendarDays,
+  Clock3,
   Activity,
 } from 'lucide-react';
 import Link from 'next/link';
@@ -36,8 +36,8 @@ export default async function DashboardPage() {
               </span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Manage your account, track your progress, and access exclusive
-              resources.
+              Manage your account and stay on top of your scheduled meeting
+              time.
             </p>
           </div>
 
@@ -75,27 +75,27 @@ export default async function DashboardPage() {
               </CardContent>
             </Card>
 
-            {/* Billing Card */}
+            {/* Meeting Schedule Card */}
             <Card className="glass-card border-border/50">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2 dark:text-white">
-                  <CreditCard className="w-5 h-5" />
-                  <span>Billing</span>
+                  <CalendarClock className="w-5 h-5" />
+                  <span>Meeting Time Scheduled</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div>
-                  <p className="text-sm text-muted-foreground">Current Plan</p>
-                  <p className="font-medium text-lg">Free Tier</p>
+                  <p className="text-sm text-muted-foreground">Next Meeting</p>
+                  <p className="font-medium text-lg">Not scheduled yet</p>
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">
-                    Upgrade for premium features
+                    Pick a time that works best for your next session
                   </p>
                 </div>
-                <Link href="/billing">
+                <Link href="/community">
                   <Button className="w-full">
-                    Upgrade Plan
+                    Schedule Meeting Time
                   </Button>
                 </Link>
               </CardContent>
@@ -112,66 +112,66 @@ export default async function DashboardPage() {
               <CardContent className="space-y-3">
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-muted-foreground">
-                    Courses Enrolled
+                    Meetings Scheduled
                   </span>
                   <span className="font-bold text-primary">0</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-muted-foreground">
-                    Hours Learned
+                    Total Meeting Time
                   </span>
-                  <span className="font-bold text-primary">0</span>
+                  <span className="font-bold text-primary">0h</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-muted-foreground">
-                    Completed
+                    Upcoming This Week
                   </span>
-                  <span className="font-bold text-primary">0%</span>
+                  <span className="font-bold text-primary">0</span>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          {/* Learning Section */}
+          {/* Meetings Section */}
           <div className="grid md:grid-cols-2 gap-6">
-            {/* My Courses */}
+            {/* Upcoming Meetings */}
             <Card className="glass-card border-border/50">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2 dark:text-white">
-                  <BookOpen className="w-5 h-5" />
-                  <span>My Courses</span>
+                  <CalendarDays className="w-5 h-5" />
+                  <span>Upcoming Meetings</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-center py-8 space-y-4">
                   <p className="text-muted-foreground">
-                    You haven't enrolled in any courses yet
+                    No upcoming meetings scheduled yet
                   </p>
                   <Link href="/community">
                     <Button variant="outline" className="glass">
-                      Browse Courses
+                      Choose a Meeting Time
                     </Button>
                   </Link>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Certifications */}
+            {/* Meeting History */}
             <Card className="glass-card border-border/50">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2 dark:text-white">
-                  <Award className="w-5 h-5" />
-                  <span>Certifications</span>
+                  <Clock3 className="w-5 h-5" />
+                  <span>Meeting History</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-center py-8 space-y-4">
                   <p className="text-muted-foreground">
-                    No certifications earned yet
+                    Your completed sessions will appear here
                   </p>
                   <Link href="/community">
                     <Button variant="outline" className="glass">
-                      View Available Certifications
+                      Schedule Your First Meeting
                     </Button>
                   </Link>
                 </div>
