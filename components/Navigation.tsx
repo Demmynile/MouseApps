@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -29,18 +28,23 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           <Link href="/" className="flex items-center space-x-1">
-            <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
-              <Image
-                src="/mouseapps.png"
-                alt="MouseApps."
-                width={80}
-                height={80}
-                className="object-contain"
-                priority
-              />
-            </div>
+            <div
+              role="img"
+              aria-label="MouseLabs."
+              className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-foreground via-primary to-accent"
+              style={{
+                WebkitMaskImage: 'url(/mouselabs-icon.png)',
+                maskImage: 'url(/mouselabs-icon.png)',
+                WebkitMaskSize: 'contain',
+                maskSize: 'contain',
+                WebkitMaskRepeat: 'no-repeat',
+                maskRepeat: 'no-repeat',
+                WebkitMaskPosition: 'center',
+                maskPosition: 'center',
+              }}
+            />
             <span className="text-xl md:text-2xl font-bold bg-gradient-to-br from-foreground via-primary to-accent bg-clip-text text-transparent drop-shadow-lg">
-              MouseApps.
+              MouseLabs.
             </span>
           </Link>
 
@@ -90,7 +94,8 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="md:hidden text-foreground"
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -108,28 +113,28 @@ export default function Navigation() {
           <div className="px-4 pt-2 pb-4 space-y-2">
             <Link
               href="/#services"
-              className="block px-3 py-2 rounded-lg hover:bg-accent transition-colors"
+              className="block px-3 py-2 rounded-lg text-foreground font-medium hover:bg-accent hover:text-primary transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Services
             </Link>
             <Link
               href="/community"
-              className="block px-3 py-2 rounded-lg hover:bg-accent transition-colors"
+              className="block px-3 py-2 rounded-lg text-foreground font-medium hover:bg-accent hover:text-primary transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Community
             </Link>
             <Link
               href="/#about"
-              className="block px-3 py-2 rounded-lg hover:bg-accent transition-colors"
+              className="block px-3 py-2 rounded-lg text-foreground font-medium hover:bg-accent hover:text-primary transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/#contact"
-              className="block px-3 py-2 rounded-lg hover:bg-accent transition-colors"
+              className="block px-3 py-2 rounded-lg text-foreground font-medium hover:bg-accent hover:text-primary transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact
