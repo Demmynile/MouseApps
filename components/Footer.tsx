@@ -30,7 +30,7 @@ export default function Footer() {
             <div className="flex items-center space-x-1">
               <div
                 role="img"
-                aria-label="MouseLabs."
+                aria-label="MouseApps."
                 className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-foreground via-primary to-accent"
                 style={{
                   WebkitMaskImage: 'url(/mouselabs-icon.png)',
@@ -44,7 +44,7 @@ export default function Footer() {
                 }}
               />
               <span className="text-xl md:text-2xl font-bold bg-gradient-to-br from-foreground via-primary to-accent bg-clip-text text-transparent drop-shadow-lg">
-                MouseLabs.
+                MouseApps.
               </span>
             </div>
             <p className="text-sm text-muted-foreground dark:text-gray-200">
@@ -206,7 +206,7 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <p>&copy; {currentYear} MouseLabs. All rights reserved.</p>
+          <p>&copy; {currentYear} MouseApps. All rights reserved.</p>
           <div className="flex space-x-6">
             <Link href="/privacy" className="hover:text-primary transition-colors dark:text-gray-200">
               Privacy Policy
