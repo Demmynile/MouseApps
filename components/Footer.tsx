@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   Github,
   Twitter,
@@ -29,15 +28,21 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center space-x-1">
-              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
-                <Image
-                  src="/mouseapps.png"
-                  alt="MouseApps."
-                  width={80}
-                  height={80}
-                  className="object-contain"
-                />
-              </div>
+              <div
+                role="img"
+                aria-label="MouseApps."
+                className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-foreground via-primary to-accent"
+                style={{
+                  WebkitMaskImage: 'url(/mouselabs-icon.png)',
+                  maskImage: 'url(/mouselabs-icon.png)',
+                  WebkitMaskSize: 'contain',
+                  maskSize: 'contain',
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskPosition: 'center',
+                  maskPosition: 'center',
+                }}
+              />
               <span className="text-xl md:text-2xl font-bold bg-gradient-to-br from-foreground via-primary to-accent bg-clip-text text-transparent drop-shadow-lg">
                 MouseApps.
               </span>

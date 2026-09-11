@@ -11,7 +11,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "MouseApps- Digital Consulting & Tech Community",
+  title: "MouseApps - Digital Consulting",
   description: "Expert consulting in Data, Software Engineering, Cloud Deployment, and Security. Join our thriving tech community and access our LMS platform.",
   keywords: ["consulting", "software engineering", "cloud deployment", "data analytics", "cybersecurity", "tech community", "LMS"],
 };
